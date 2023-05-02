@@ -1,38 +1,54 @@
 import PropTypes from 'prop-types';
+import {
+  Stats,
+  StatsInfo,
+  StatsName,
+  UserCard,
+  UserPhoto,
+  UserStats,
+  UserInfo,
+  UserName,
+  UserTag,
+  UserLocation,
+} from './Profile.styled';
+import { MdOutlineAlternateEmail } from 'react-icons/md';
 
 export const Profile = ({
-  item: { username, tag, location, avatar, stats },
+  card: { username, tag, location, avatar, stats },
 }) => {
   return (
-    <div>
+    <UserCard key={username}>
+      <UserInfo>
+        <UserPhoto src={avatar} alt={username} />
+        <UserName>{username}</UserName>
+        <UserTag>
+          <MdOutlineAlternateEmail />
+          {tag}
+        </UserTag>
+        <UserLocation>{location}</UserLocation>
+      </UserInfo>
       <div>
-        <img src={avatar} alt={username} />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+        <UserStats>
+          <StatsInfo>
+            <StatsName>Followers</StatsName>
+            <Stats> {stats.followers}</Stats>
+          </StatsInfo>
+          <StatsInfo>
+            <StatsName>Views</StatsName>
+            <Stats> {stats.views}</Stats>
+          </StatsInfo>
+          <StatsInfo>
+            <StatsName>Likes</StatsName>
+            <Stats> {stats.likes}</Stats>
+          </StatsInfo>
+        </UserStats>
       </div>
-      <div>
-        <ul>
-          <li>
-            <span>Followers</span>
-            <span> {stats.followers}</span>
-          </li>
-          <li>
-            <span>Views</span>
-            <span> {stats.views}</span>
-          </li>
-          <li>
-            <span>Likes</span>
-            <span> {stats.likes}</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </UserCard>
   );
 };
 
 Profile.propTypes = {
-  item: PropTypes.shape({
+  card: PropTypes.shape({
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,

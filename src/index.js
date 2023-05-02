@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
 import { App } from 'components/App';
-import './index.css';
 
 const theme = {
   colors: {
+    white: '#fff',
     black: '#212121',
-    gray: 'gray',
+    gray: '#e9e9e9',
+    secondText: '#a8a7a7',
+    backgroundColor: '#ebebeb',
   },
 };
 
