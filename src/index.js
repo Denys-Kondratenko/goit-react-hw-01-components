@@ -10,6 +10,9 @@ const theme = {
     gray: '#e9e9e9',
     secondText: '#a8a7a7',
     backgroundColor: '#ebebeb',
+    red: 'red',
+    green: 'green',
+    blue: 'aqua',
   },
 };
 

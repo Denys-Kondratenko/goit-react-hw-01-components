@@ -4,6 +4,8 @@ export const StatsCard = styled.section`
   width: 400px;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 5px;
+  overflow: hidden;
 `;
 
 export const StatsTitle = styled.h2`
